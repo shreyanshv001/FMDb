@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Header({ data }) {
+  console.log(data);
   const { id } = useParams();
   // console.log(id);
   // console.log(data);

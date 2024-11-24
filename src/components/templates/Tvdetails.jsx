@@ -125,7 +125,7 @@ function Tvdetails() {
         </div>
       </div>
       <HorizontalCards title={"Seasons"} data={info.detail.seasons} />
-      <hr className="mb-[4vh] mt-[15vh] border-none " />
+      <hr className="mb-[8vh] mt-[15vh] border-none " />
       <HorizontalCards
         title={"Recommendations & Similar stuff"}
         data={

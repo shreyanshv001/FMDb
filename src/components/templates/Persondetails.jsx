@@ -23,7 +23,7 @@ function Persondetails() {
     };
   }, [id]);
   return info ? (
-    <div className="w-screen min-h-[140vh] px-[10%] bg-[#1F1E24] relative py-8 text-white ">
+    <div className="w-screen min-h-[140vh] px-[10%] bg-[#1F1E24] relative py-8 text-white overflow-x-hidden ">
       <nav className="w-full text-gray-50 flex gap-10 items-center text-2xl opacity-[1] ">
         <i
           onClick={() => navigate(-1)}

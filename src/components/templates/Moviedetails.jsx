@@ -39,7 +39,7 @@ function Moviedetails() {
         backgroundRepeat: "no-repeat",
         // opacity: "0.6",
       }}
-      className="w-screen min-h-[150vh] px-[10%] relative py-8 "
+      className="w-screen min-h-[150vh] px-[10%] relative py-8 overflow-y-hidden "
     >
       <nav className="w-full text-gray-50 flex gap-10 items-center text-2xl opacity-[1] ">
         <i

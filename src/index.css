@@ -2,8 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.swiper-scrollbar {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 7px;
+}
+.swiper-scrollbar-drag {
+  background-color: rgb(101, 101, 101);
+  border-radius: 10px;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+.swiper-scrollbar-drag:hover {
+  background-color: rgb(53, 53, 53);
+}
+
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 7px;
   height: 7px;
 }
 ::-webkit-scrollbar-thumb {
@@ -14,7 +36,6 @@
   background-color: rgb(53, 53, 53);
 }
 
-/* Show scrollbar only when scrolling */
 .scrollbar-hide {
   scrollbar-width: auto;
   scrollbar-gutter: stable;
@@ -33,8 +54,6 @@
   border-radius: 10px;
   opacity: 0;
 }
-
-/* Show scrollbar only when scrolling */
 .scrollbar-hide:not(:hover)::-webkit-scrollbar-thumb {
   visibility: hidden;
 }
