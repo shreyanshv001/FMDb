@@ -126,7 +126,7 @@ function Moviedetails() {
             className="bg-[#6556CD] px-5 text-md py-4 rounded my-[2rem] "
           >
             <i className="ri-play-fill mr-3"></i>
-            Play Trailor
+            Play Trailer
           </Link>
         </div>
       </div>
