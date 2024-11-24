@@ -15,9 +15,9 @@ function Home() {
       const { data } = await axios.get(`trending/all/day`);
       // console.log(data.results);
 
-      const randomData =
-        data.results[Math.floor(Math.random() * data.results.length)];
-      setwallpaper(randomData);
+      // const randomData =
+      //   data.results[Math.floor(Math.random() * data.results.length)];
+      setwallpaper(data.results.slice(9, 19));
       // console.log(randomData);
     } catch (error) {
       console.log(error.message);

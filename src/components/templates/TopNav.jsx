@@ -33,7 +33,7 @@ function TopNav() {
       {query.length > 0 && (
         <i
           onClick={() => setquery("")}
-          className="text-3xl text-zinc-400 ri-close-line"
+          className="text-3xl text-zinc-400 ri-close-line cursor-pointer"
         ></i>
       )}
       <div className="absolute w-[60%] max-h-[55vh] bg-zinc-200 top-[100%] overflow-auto ">

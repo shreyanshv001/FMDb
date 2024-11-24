@@ -15,7 +15,7 @@ function Persondetails() {
   // console.log(id);
   const dispatch = useDispatch();
   const info = useSelector((state) => state.personReducer.info);
-  console.log(info);
+  // console.log(info);
   useEffect(() => {
     dispatch(asyncLoadPerson(id));
     return () => {

@@ -11,6 +11,7 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
     const videos = await axios.get(`/movie/${id}/videos`);
     const watchProviders = await axios.get(`/movie/${id}/watch/providers`);
     const translations = await axios.get(`/movie/${id}/translations`);
+    const credits = await axios.get(`/movie/${id}/credits`);
     let theGreatData = {
       detail: detail.data,
       externalid: externalid.data,
@@ -19,6 +20,7 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
       translations: translations.data.translations,
       videos: videos.data.results.find((m) => m.type === "Trailer"),
       watchProviders: watchProviders.data,
+      credits: credits.data.cast,
     };
     dispatch(loadMovie(theGreatData));
     // console.log(theGreatData);

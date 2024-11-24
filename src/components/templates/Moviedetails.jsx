@@ -20,7 +20,7 @@ function Moviedetails() {
   // console.log(id);
   const dispatch = useDispatch();
   const { info } = useSelector((state) => state.movieReducer);
-  // console.log(info);
+  console.log(info);
   useEffect(() => {
     dispatch(asyncloadmovie(id));
     return () => {
@@ -118,8 +118,8 @@ function Moviedetails() {
             <p>{info.detail.overview}</p>
           </div>
           <div className="mb-9">
-            <h1 className="text-2xl mt-5 mb-3">Movie Translated</h1>
-            <p>{info.translations.map((e) => e.name).join(", ")}</p>
+            <h1 className="text-2xl mt-5 mb-3">Cast</h1>
+            <p>{info.credits.map((cast, index) => cast.name).join(", ")}</p>
           </div>
           <Link
             to={`/movie/details/${id}/trailer`}
