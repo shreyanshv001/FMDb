@@ -1,24 +1,23 @@
 import React from "react";
 
-function Dropdown({ title, option }) {
+function Dropdown({ title, option, func }) {
   return (
-    <div className="flex items-center justify-center gap-8 ">
-      <label htmlFor="dropdown-select"></label>
-
+    <div className="select  ">
       <select
-        name="dropdown"
-        id="dropdown-select"
-        className="bg-zinc-700 text-white px-5 py-2 rounded-md outline-none "
+        defaultValue="0"
+        onChange={func}
+        name="format"
+        id="format"
+        className="bg-zinc-700 w-[10rem] ml-5 px-4 py-2 rounded-lg"
       >
-        {/* <option value="" className="bg-zinc-500 text-white">
+        <option value="0" disabled>
           {title}
-        </option> */}
-        {option &&
-          option.map((item, index) => (
-            <option key={index} value={item}>
-              {item}
-            </option>
-          ))}
+        </option>
+        {option.map((o, i) => (
+          <option key={i} value={o}>
+            {o.toUpperCase()}
+          </option>
+        ))}
       </select>
     </div>
   );

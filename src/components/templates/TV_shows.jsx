@@ -77,7 +77,8 @@ function TV_shows() {
         <TopNav />
         <Dropdown
           title="Category"
-          option={["now playing", "popular", "top rated", "upcoming"]}
+          option={["on_the_air", "popular", "top_rated", "airing_today"]}
+          func={(e) => setcategory(e.target.value)}
         />
       </div>
       <InfiniteScroll

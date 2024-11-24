@@ -76,7 +76,11 @@ function Popular() {
           Popular
         </h1>
         <TopNav />
-        <Dropdown title="Category" option={["All", "Movie", "TV"]} />
+        <Dropdown
+          title="Category"
+          option={["movie", "tv"]}
+          func={(e) => setcategory(e.target.value)}
+        />
       </div>
       <InfiniteScroll
         dataLength={popular.length}

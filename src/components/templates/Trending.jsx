@@ -78,8 +78,16 @@ function Trending() {
           Trending
         </h1>
         <TopNav />
-        <Dropdown title="Category" option={["All", "Movie", "TV"]} />
-        <Dropdown title="Duration" option={["Day", "Week"]} />
+        <Dropdown
+          title="Category"
+          option={["all", "movie", "tv"]}
+          func={(e) => setcategory(e.target.value)}
+        />
+        <Dropdown
+          title="Duration"
+          option={["day", "week"]}
+          func={(e) => setduration(e.target.value)}
+        />
       </div>
       <InfiniteScroll
         dataLength={trending.length}

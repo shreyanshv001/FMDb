@@ -10,7 +10,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 function Movies() {
   document.title = "FMDb | Movie";
   const navigate = useNavigate();
-  const [category, setcategory] = useState("now_playing");
+  const [category, setcategory] = useState("upcoming");
   const [movie, setmovie] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
@@ -78,7 +78,8 @@ function Movies() {
         <TopNav />
         <Dropdown
           title="Category"
-          option={["now playing", "popular", "top rated", "upcoming"]}
+          option={["now_playing", "popular", "top_rated", "upcoming"]}
+          func={(e) => setcategory(e.target.value)}
         />
       </div>
       <InfiniteScroll
