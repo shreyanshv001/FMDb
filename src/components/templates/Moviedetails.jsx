@@ -58,7 +58,7 @@ function Moviedetails() {
           target="blank"
           className=" text-white"
         >
-          <i class="ri-earth-fill"></i>
+          <i className="ri-earth-fill"></i>
         </a>
         <a
           href={`https://www.imdb.com/title/${info.externalid.imdb_id}/`}
@@ -82,6 +82,7 @@ function Moviedetails() {
               info.detail.name ||
               info.detail.original_name ||
               info.detail.original_title}
+            <span> </span>
             <small className="text-xl font-medium text-zinc-300">
               ({info.detail.release_date.split("-")[0]})
             </small>
@@ -119,7 +120,11 @@ function Moviedetails() {
           </div>
           <div className="mb-9">
             <h1 className="text-2xl mt-5 mb-3">Cast</h1>
-            <p>{info.credits.map((cast, index) => cast.name).join(", ")}</p>
+            <p>
+              {info.credits
+                .map((cast, index) => `${cast.name} (${cast.character})`)
+                .join(", ")}
+            </p>
           </div>
           <Link
             to={`/movie/details/${id}/trailer`}

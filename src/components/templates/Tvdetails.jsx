@@ -10,7 +10,7 @@ function Tvdetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const info = useSelector((state) => state.tvReducer.info);
-  // console.log(info);
+  console.log(info);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncLoadTv(id));
@@ -108,10 +108,12 @@ function Tvdetails() {
             <p>{info.detail.overview}</p>
           </div>
           <div className="mb-9">
-            <h1 className="text-2xl mt-5 mb-3">Movie Translated</h1>
+            <h1 className="text-2xl mt-5 mb-3">Cast</h1>
             <p>
-              {info.translations.translations
-                .map((e) => e.english_name)
+              {info.credits
+                .map(
+                  (cast, index) => `${cast.original_name} (${cast.character})`
+                )
                 .join(", ")}
             </p>
           </div>

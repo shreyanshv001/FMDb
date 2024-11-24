@@ -11,6 +11,7 @@ export const asyncLoadTv = (id) => async (dispatch, getState) => {
     const videos = await axios.get(`/tv/${id}/videos`);
     const watchProviders = await axios.get(`/tv/${id}/watch/providers`);
     const translations = await axios.get(`/tv/${id}/translations`);
+    const credits = await axios.get(`/tv/${id}/credits`);
     const TvAllDataCon = {
       detail: detail.data,
       externalid: externalid.data,
@@ -19,6 +20,7 @@ export const asyncLoadTv = (id) => async (dispatch, getState) => {
       videos: videos.data.results,
       watchProviders: watchProviders.data.results,
       translations: translations.data,
+      credits: credits.data.cast.slice(0, 10),
     };
     // console.log(TvAllDataCon);
     dispatch(loadTv(TvAllDataCon));
