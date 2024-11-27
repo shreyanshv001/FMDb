@@ -17,17 +17,19 @@ function HorizontalCards({ data, title }) {
         title === "Famous For" ? "p-0 " : "p-5"
       }   text-white   `}
     >
-      <div>
-        <h1
-          className={`${
-            title === "Famous For"
-              ? "text-2xl font-medium text-zinc-400 mt-5"
-              : "text-3xl font-semibold"
-          } pb-5 `}
-        >
-          {title}
-        </h1>
-      </div>
+      <Swiper>
+        <div>
+          <h1
+            className={`${
+              title === "Famous For"
+                ? "text-2xl font-medium text-zinc-400 mt-5"
+                : "text-3xl font-semibold"
+            } pb-5 `}
+          >
+            {title}
+          </h1>
+        </div>
+      </Swiper>
 
       <Swiper
         className={`flex overflow-x-auto gap-5 w-full mt-5 ${

@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 function Header({ data }) {
   return (
-    <div className="w-full h-[50vh] bg-black  relative">
+    <div className="w-full h-[85vh] bg-black  relative">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -15,6 +15,7 @@ function Header({ data }) {
           delay: 3000,
           disableOnInteraction: false,
         }}
+        loop={true}
         pagination={{
           clickable: true,
         }}
@@ -24,12 +25,13 @@ function Header({ data }) {
         {data.map((item, index) => (
           <SwiperSlide>
             <img
-              className="w-full h-full object-cover bg-center  opacity-[0.5]  "
+              className="w-full h-full object-cover bg-center opacity-[0.7]  "
               src={`https://image.tmdb.org/t/p/original/${
                 item.backdrop_path || item.profile_path
               }`}
               alt=""
             />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent  to-[#131215]"></div>
             <div className=" absolute inline-block  top-[5.2vw] left-[6%]  h-full  text-white bg-transparent">
               <h1 className="text-5xl font-black">
                 {item.original_title ||

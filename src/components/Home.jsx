@@ -17,7 +17,7 @@ function Home() {
 
       // const randomData =
       //   data.results[Math.floor(Math.random() * data.results.length)];
-      setwallpaper(data.results.slice(9, 19));
+      setwallpaper(data.results.slice(9, 20));
       // console.log(randomData);
     } catch (error) {
       console.log(error.message);
@@ -40,10 +40,14 @@ function Home() {
   return wallpaper && trending ? (
     <>
       <SideNav />
-      <div className="w-[80%] h-full overflow-auto pb-48 ">
+      <div className="w-[80%] h-full overflow-auto pb-48 relative ">
         <TopNav />
-        <Header data={wallpaper} />
-        <HorizontalCards data={trending} title={"Trending"} />
+        <div className="relative">
+          <Header data={wallpaper} />
+          <div className="mt-[-21%] ">
+            <HorizontalCards data={trending} title={"Trending"} />
+          </div>
+        </div>
       </div>
     </>
   ) : (
