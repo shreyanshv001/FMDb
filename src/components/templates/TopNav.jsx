@@ -36,6 +36,12 @@ function TopNav() {
           className="text-3xl text-zinc-400 ri-close-line cursor-pointer"
         ></i>
       )}
+      <div className="w-full bg-red-300 mr-5"></div>
+
+      <div className="w-24 h-12  rounded-full flex items-center justify-center">
+        <span className="text-zinc-400 text-lg mr-5">Hello!</span>
+        <i className="ri-user-line text-[2rem] text-zinc-400"></i>
+      </div>
       <div className="absolute w-[60%] max-h-[55vh] bg-zinc-200 top-[100%] overflow-auto ">
         {searches.map((s, i) => (
           <Link

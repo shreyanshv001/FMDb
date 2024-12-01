@@ -18,7 +18,7 @@ export const asyncLoadTv = (id) => async (dispatch, getState) => {
       recommendations: recommendations.data.results,
       similar: similar.data.results,
       videos: videos.data.results,
-      watchProviders: watchProviders.data.results,
+      watchProviders: watchProviders.data.results.IN,
       translations: translations.data,
       credits: credits.data.cast.slice(0, 10),
     };

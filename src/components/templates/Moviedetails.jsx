@@ -68,15 +68,43 @@ function Moviedetails() {
           imdb
         </a>
       </nav>
-      <div className="w-full flex mt-10 mb-8 ">
-        <img
-          className="h-[50vh] object-cover shadow-2xl shadow-black "
-          src={`https://image.tmdb.org/t/p/original/${
-            info.detail.poster_path || info.detail.backdrop_path
-          }`}
-          alt=""
-        />
-        <div className=" ml-[5%] w-full text-white">
+      <div className="w-full flex mt-10 mb-5  ">
+        <div className="flex flex-col ">
+          <img
+            className="h-[50vh] object-cover shadow-2xl shadow-black "
+            src={`https://image.tmdb.org/t/p/original/${
+              info.detail.poster_path || info.detail.backdrop_path
+            }`}
+            alt=""
+          />
+          {info.watchProviders &&
+            (info.watchProviders.flatrate || info.watchProviders.rent) && (
+              <div className="flex items-center gap-4 mt-5 flex-wrap w-full ">
+                <h2 className="text-white text-xl font-semibold ">
+                  Available on:
+                </h2>
+                {info.watchProviders.flatrate
+                  ? info.watchProviders.flatrate.map((w) => (
+                      <img
+                        title={`${w.provider_name}`}
+                        className="w-[5vh] h-[5vh] object-cover rounded-md "
+                        src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
+                        key={w.logo_path}
+                      />
+                    ))
+                  : info.watchProviders.rent.map((w) => (
+                      <img
+                        title="w.provider_name"
+                        className="w-[5vh] h-[5vh] object-cover rounded-md "
+                        src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
+                        key={w.logo_path}
+                      />
+                    ))}
+              </div>
+            )}
+        </div>
+
+        <div className=" ml-[5%]  w-full text-white">
           <div className="text-5xl font-black text-white">
             {info.detail.title ||
               info.detail.name ||
@@ -128,7 +156,7 @@ function Moviedetails() {
           </div>
           <Link
             to={`/movie/details/${id}/trailer`}
-            className="bg-[#6556CD] px-5 text-md py-4 rounded my-[2rem] "
+            className="bg-[#6556CD] px-5 text-md py-4  rounded my-[2rem] "
           >
             <i className="ri-play-fill mr-3"></i>
             Play Trailer
